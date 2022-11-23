@@ -30,7 +30,7 @@ from datetime import date
 ─██████████████─██████████████─██████████████─██████──██████─██████─────────██████████████─
 ───────────────────────────────────────────────────────────────────────────────────────────
 '''
-bot = Bot(token="5149404673:AAHR1nlea850FTBN39zXx_dwglJPiuI1TLU")
+bot = Bot(token="")
 dp = Dispatcher(bot)
 logging.basicConfig(level=logging.INFO)
 owner_id = 1455767363
