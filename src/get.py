@@ -4,14 +4,7 @@ from bs4 import BeautifulSoup
 import urllib.request
 from urllib.request import urlopen
 from socket import timeout
-'''
-██████╗░░█████╗░██╗░░██╗██╗███╗░░██╗░██████╗░
-██╔══██╗██╔══██╗██║░██╔╝██║████╗░██║██╔════╝░
-██████╦╝╚█████╔╝█████═╝░██║██╔██╗██║██║░░██╗░
-██╔══██╗██╔══██╗██╔═██╗░██║██║╚████║██║░░╚██╗
-██████╦╝╚█████╔╝██║░╚██╗██║██║░╚███║╚██████╔╝
-╚═════╝░░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝░╚═════╝░
-'''
+
 def download():
     try:
         html_page = urllib.request.urlopen("https://college-ural.ru/studentam/studentam-ochnogo-otdeleniya/raspisanie-zanyatiy.php")
