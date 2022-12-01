@@ -3,6 +3,7 @@
 import hashlib
 from src import get
 from src import convert
+from src import branch
 import sqlite3
 import sqlite3 as lite
 import logging
@@ -30,7 +31,7 @@ from datetime import date
 ─██████████████─██████████████─██████████████─██████──██████─██████─────────██████████████─
 ───────────────────────────────────────────────────────────────────────────────────────────
 '''
-bot = Bot(token="5149404673:AAHR1nlea850FTBN39zXx_dwglJPiuI1TLU")
+bot = Bot(token="5149404673:AAEkqo0GQSJ8kd8v16epo4s2m3W07UG_XMo")
 dp = Dispatcher(bot)
 logging.basicConfig(level=logging.INFO)
 owner_id = 1455767363
@@ -132,7 +133,8 @@ if __name__ == "__main__":
         executor.start_polling(dp, skip_updates=True) 
 
 
-#-->upd:2022-09-21
+#-->upd:2022-09-21 
 #-->upd:2022-09-23
 #-->upd:2022-09-29
-#-->upd:2022-10-18
+#-->upd:2022-10-18 [130 сек]
+#-->upd:2022-12-1 [33 сек]

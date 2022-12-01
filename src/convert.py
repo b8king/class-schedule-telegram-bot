@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from openpyxl import load_workbook
 import pyexcel as p
 import openpyxl
@@ -8,10 +9,15 @@ import urllib.request
 from urllib.request import urlopen
 from socket import timeout
 import datetime
+from src import branch
 
+path_sample='background/sample.png'
+font_sample='font/1.ttf'
+image_output='photo.png'
 counter = 0
-start_time = time.time()
+
 def get_conversion():
+    start_time = time.time()
     wb = openpyxl.load_workbook('data/document/xlsx.xlsx')
     sheet2 = wb['ИСиП, ИС']
     v7=sheet2['W7'].value
@@ -92,7 +98,6 @@ def get_conversion():
     v83=sheet2['W83'].value
     v84=sheet2['W84'].value
     v85=sheet2['W85'].value
-    #ячейки [x]
     x7=sheet2['X7'].value
     x8=sheet2['X8'].value
     x9=sheet2['X9'].value
@@ -171,7 +176,7 @@ def get_conversion():
     x83=sheet2['X83'].value
     x84=sheet2['X84'].value
     x85=sheet2['X85'].value
-    #условия если нет пар
+    #если нет пар
     if v8 == None:
         v8= ' '
     if v9 == None:
@@ -480,7 +485,7 @@ def get_conversion():
         x84=' '
     if x85 == None:
         x85=' '
-#условия если пара больше 40 символов
+    #если пара больше 40 символов
     a='qwertyuioplkjhgfdsazxcvbnmkjhgfdrtyuiojg'
     if len(v8) > len(a):
         v8= v8[:-30]
@@ -636,1173 +641,128 @@ def get_conversion():
         v84= v84[:-30]
     if len(v85) > len(a):
         v85= v85[:-30]
-    
-       #кабинеты
-    
-    name = ('background/sample.png')
-#1
-    im = Image.open(name)
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 120),
-    str(x8),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-#2
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 200),
-    str(x10),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-#3
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 280),
-    str(x12),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-#4
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 360),
-    str(x14),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
 
-#5
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 440),
-    str(x16),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-#6
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 520),
-    str(x18),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-#----
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 120),
-    str(x21),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 200),
-    str(x23),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 280),
-    str(x25),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 360),
-    str(x27),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 440),
-    str(x29),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 520),
-    str(x31),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 120),
-    str(x35),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 200),
-    str(x37),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 280),
-    str(x39),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 360),
-    str(x41),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 440),
-    str(x43),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 520),
-    str(x45),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 1060),
-    str(x48),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 1140),
-    str(x50),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 1240),
-    str(x52),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 1320),
-    str(x54),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 1400),
-    str(x56),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (740, 1480),
-    str(x58),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 1060),
-    str(x61),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 1140),
-    str(x63),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 1240),
-    str(x65),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 1320),
-    str(x67),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 1400),
-    str(x69),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1740, 1480),
-    str(x71),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 1060),
-    str(x74),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 1140),
-    str(x76),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 1240),
-    str(x78),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 1320),
-    str(x80),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 1400),
-    str(x82),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2740, 1480),
-    str(x84),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-#предменты
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 120),
-    str(v8),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 160),
-    str(v9),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 200),
-    str(v10),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 240),
-    str(v11),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 280),
-    str(v12),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 320),
-    str(v13),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 360),
-    str(v14),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 400),
-    str(v15),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 440),
-    str(v16),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 480),
-    str(v17),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 520),
-    str(v18),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 560),
-    str(v19),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    #*от 21 до 33 (вторник)
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 120),
-    str(v21),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 160),
-    str(v22),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 200),
-    str(v23),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 240),
-    str(v24),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 280),
-    str(v25),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 320),
-    str(v26),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 360),
-    str(v27),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 400),
-    str(v28),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 440),
-    str(v29),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 480),
-    str(v30),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 520),
-    str(v31),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 560),
-    str(v32),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 120),
-    str(v35),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 160),
-    str(v36),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 200),
-    str(v37),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 240),
-    str(v38),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 280),
-    str(v39),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 320),
-    str(v40),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 360),
-    str(v41),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 400),
-    str(v42),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 440),
-    str(v43),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 480),
-    str(v44),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 520),
-    str(v45),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype("font/1.ttf", size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 560),
-    str(v46),
-    font=font,
-    fill="#fff")
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1060),
-    str(v48),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1100),
-    str(v49),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1140),
-    str(v50),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1180),
-    str(v51),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1220),
-    str(v52),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1260),
-    str(v53),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1300),
-    str(v54),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1340),
-    str(v55),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1380),
-    str(v56),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1420),
-    str(v57),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1460),
-    str(v58),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (60, 1500),
-    str(v59),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1060),
-    str(v61),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1100),
-    str(v62),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1140),
-    str(v63),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1180),
-    str(v64),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1220),
-    str(v65),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1260),
-    str(v66),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1300),
-    str(v67),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1340),
-    str(v68),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1380),
-    str(v69),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1420),
-    str(v70),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1460),
-    str(v71),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1060, 1500),
-    str(v72),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1060),
-    str(v74),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1100),
-    str(v75),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1140),
-    str(v76),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1180),
-    str(v77),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1220),
-    str(v78),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1260),
-    str(v79),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1300),
-    str(v80),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1340),
-    str(v81),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1380),
-    str(v82),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1420),
-    str(v83),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=40)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1460),
-    str(v84),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-    
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2060, 1500),
-    str(v85),
-    font=font,
-    fill='#fff')
-    photo = im.save('photo.png')
-
-    
-    global counter
-
-    counter += 1
-
-    now = datetime.datetime.now()
-    g = now.strftime("%d-%m-%Y %H:%M")
-    name = ('background/sample.png')
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    res = "%s СЕК" % (time.time() - start_time)
-    draw_text.text(
-    (328, 791),
-    str(g),
-    font=font,
-    fill='#3A4046')
-    photo = im.save('photo.png')
-        
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (2338, 793),
-    str(str(counter)),
-    font=font,
-    fill='#3A4046')
-    photo = im.save('photo.png')
-
-    im = Image.open('photo.png')
-    font = ImageFont.truetype('font/1.ttf', size=30)
-    draw_text = ImageDraw.Draw(im)
-    draw_text.text(
-    (1168, 794),
-    str(res),
-    font=font,
-    fill='#3A4046')
-    photo = im.save('photo.png')
-
-'''
-█▀▀▄ ▄▀▀▄ █░█ ░▀░ █▀▀▄ █▀▀▀ 
-█▀▀▄ ▄▀▀▄ █▀▄ ▀█▀ █░░█ █░▀█ 
-▀▀▀░ ▀▄▄▀ ▀░▀ ▀▀▀ ▀░░▀ ▀▀▀▀
-'''
+    branch.set(path_sample,font_sample,40,740,120,x8,image_output)
+    branch.set(image_output,font_sample,40,740,200,x10,image_output)
+    branch.set(image_output,font_sample,40,740,280,x12,image_output)
+    branch.set(image_output,font_sample,40,740,360,x14,image_output)
+    branch.set(image_output,font_sample,40,740,440,x16,image_output)
+    branch.set(image_output,font_sample,40,740,520,x18,image_output)
+    branch.set(image_output,font_sample,40,1740,120,x21,image_output)
+    branch.set(image_output,font_sample,40,1740,200,x23,image_output)
+    branch.set(image_output,font_sample,40,1740,280,x25,image_output)
+    branch.set(image_output,font_sample,40,1740,360,x27,image_output)
+    branch.set(image_output,font_sample,40,1740,440,x29,image_output)
+    branch.set(image_output,font_sample,40,1740,520,x31,image_output)
+    branch.set(image_output,font_sample,40,2740,120,x35,image_output)
+    branch.set(image_output,font_sample,40,2740,200,x37,image_output)
+    branch.set(image_output,font_sample,40,2740,280,x39,image_output)
+    branch.set(image_output,font_sample,40,2740,360,x41,image_output)
+    branch.set(image_output,font_sample,40,2740,440,x43,image_output)
+    branch.set(image_output,font_sample,40,2740,520,x45,image_output)
+    branch.set(image_output,font_sample,40,740,1060,x48,image_output)
+    branch.set(image_output,font_sample,40,740,1140,x50,image_output)
+    branch.set(image_output,font_sample,40,740,1240,x52,image_output)
+    branch.set(image_output,font_sample,40,740,1320,x54,image_output)
+    branch.set(image_output,font_sample,40,740,1400,x56,image_output)
+    branch.set(image_output,font_sample,40,740,1480,x58,image_output)
+    branch.set(image_output,font_sample,40,1740,1060,x61,image_output)
+    branch.set(image_output,font_sample,40,1740,1140,x63,image_output)
+    branch.set(image_output,font_sample,40,1740,1240,x65,image_output)
+    branch.set(image_output,font_sample,40,1740,1320,x67,image_output)
+    branch.set(image_output,font_sample,40,1740,1400,x69,image_output)
+    branch.set(image_output,font_sample,40,1740,1480,x71,image_output)
+    branch.set(image_output,font_sample,40,2740,1060,x74,image_output)
+    branch.set(image_output,font_sample,40,2740,1140,x76,image_output)
+    branch.set(image_output,font_sample,40,2740,1240,x78,image_output)
+    branch.set(image_output,font_sample,40,2740,1320,x80,image_output)
+    branch.set(image_output,font_sample,40,2740,1400,x82,image_output)
+    branch.set(image_output,font_sample,40,2740,1480,x84,image_output)
+    branch.set(image_output,font_sample,40,60,120,v8,image_output)
+    branch.set(image_output,font_sample,30,60,160,v9,image_output)
+    branch.set(image_output,font_sample,40,60,200,v10,image_output)
+    branch.set(image_output,font_sample,30,60,240,v11,image_output)
+    branch.set(image_output,font_sample,40,60,280,x16,image_output)
+    branch.set(image_output,font_sample,30,60,320,v13,image_output)
+    branch.set(image_output,font_sample,40,60,360,v14,image_output)
+    branch.set(image_output,font_sample,30,60,400,v15,image_output)
+    branch.set(image_output,font_sample,40,60,440,v16,image_output)
+    branch.set(image_output,font_sample,30,60,480,v17,image_output)
+    branch.set(image_output,font_sample,40,60,520,v18,image_output)
+    branch.set(image_output,font_sample,30,60,560,v19,image_output)
+    branch.set(image_output,font_sample,40,1060,120,v21,image_output)
+    branch.set(image_output,font_sample,30,1060,160,v22,image_output)
+    branch.set(image_output,font_sample,40,1060,200,v23,image_output)
+    branch.set(image_output,font_sample,30,1060,240,v24,image_output)
+    branch.set(image_output,font_sample,40,1060,280,v25,image_output)
+    branch.set(image_output,font_sample,30,1060,320,v26,image_output)
+    branch.set(image_output,font_sample,40,1060,360,v27,image_output)
+    branch.set(image_output,font_sample,30,1060,400,v28,image_output)
+    branch.set(image_output,font_sample,40,1060,440,v29,image_output)
+    branch.set(image_output,font_sample,30,1060,480,v30,image_output)
+    branch.set(image_output,font_sample,40,1060,520,v31,image_output)
+    branch.set(image_output,font_sample,30,1060,560,v32,image_output)
+    branch.set(image_output,font_sample,40,2060,120,v35,image_output)
+    branch.set(image_output,font_sample,30,2060,160,v36,image_output)
+    branch.set(image_output,font_sample,40,2060,200,v37,image_output)
+    branch.set(image_output,font_sample,30,2060,240,v38,image_output)
+    branch.set(image_output,font_sample,40,2060,280,v39,image_output)
+    branch.set(image_output,font_sample,30,2060,320,v40,image_output)
+    branch.set(image_output,font_sample,40,2060,360,v41,image_output)
+    branch.set(image_output,font_sample,30,2060,400,v42,image_output)
+    branch.set(image_output,font_sample,40,2060,440,v43,image_output)
+    branch.set(image_output,font_sample,30,2060,480,v44,image_output)
+    branch.set(image_output,font_sample,40,2060,520,v45,image_output)
+    branch.set(image_output,font_sample,30,2060,560,v46,image_output)
+    branch.set(image_output,font_sample,40,60,1060,v48,image_output)
+    branch.set(image_output,font_sample,30,60,1100,v49,image_output)
+    branch.set(image_output,font_sample,40,60,1140,v50,image_output)
+    branch.set(image_output,font_sample,30,60,1180,v51,image_output)
+    branch.set(image_output,font_sample,40,60,1220,v52,image_output)
+    branch.set(image_output,font_sample,30,60,1260,v53,image_output)
+    branch.set(image_output,font_sample,40,60,1300,v54,image_output)
+    branch.set(image_output,font_sample,30,60,1340,v55,image_output)
+    branch.set(image_output,font_sample,40,60,1380,v56,image_output)
+    branch.set(image_output,font_sample,30,60,1420,v57,image_output)
+    branch.set(image_output,font_sample,40,60,1460,v58,image_output)
+    branch.set(image_output,font_sample,30,60,1500,v59,image_output)
+    branch.set(image_output,font_sample,40,1060,1060,v61,image_output)
+    branch.set(image_output,font_sample,30,1060,1100,v62,image_output)
+    branch.set(image_output,font_sample,40,1060,1140,v63,image_output)
+    branch.set(image_output,font_sample,30,1060,1180,v64,image_output)
+    branch.set(image_output,font_sample,40,1060,1220,v65,image_output)
+    branch.set(image_output,font_sample,30,1060,1260,v66,image_output)
+    branch.set(image_output,font_sample,40,1060,1300,v67,image_output)
+    branch.set(image_output,font_sample,30,1060,1340,v68,image_output)
+    branch.set(image_output,font_sample,40,1060,1380,v69,image_output)
+    branch.set(image_output,font_sample,30,1060,1420,v70,image_output)
+    branch.set(image_output,font_sample,40,1060,1460,v71,image_output)
+    branch.set(image_output,font_sample,30,1060,1500,v72,image_output)
+    branch.set(image_output,font_sample,40,2060,1060,v74,image_output)
+    branch.set(image_output,font_sample,30,2060,1100,v75,image_output)
+    branch.set(image_output,font_sample,40,2060,1140,v76,image_output)
+    branch.set(image_output,font_sample,30,2060,1180,v77,image_output)
+    branch.set(image_output,font_sample,40,2060,1220,v78,image_output)
+    branch.set(image_output,font_sample,30,2060,1260,v79,image_output)
+    branch.set(image_output,font_sample,40,2060,1300,v80,image_output)
+    branch.set(image_output,font_sample,30,2060,1340,v81,image_output)
+    branch.set(image_output,font_sample,40,2060,1380,v82,image_output)
+    branch.set(image_output,font_sample,30,2060,1420,v83,image_output)
+    branch.set(image_output,font_sample,40,2060,1460,v84,image_output)
+    branch.set(image_output,font_sample,30,2060,1500,v85,image_output)
+
+#---Производительность-------------------------------#
+    branch.center_bar()                              #
+    res = "%s СЕК" % (time.time() - start_time)      #
+    im = Image.open(image_output)                    #
+    font = ImageFont.truetype(font_sample, size=30)  #
+    draw_text = ImageDraw.Draw(im)                   #
+    draw_text.text(                                  #
+    (1168, 794),                                     #
+    str(res),                                        #
+    font=font,                                       #
+    fill='#3A4046')                                  #
+    im.save(image_output)                            #
+#----------------------------------------------------#
 
     
